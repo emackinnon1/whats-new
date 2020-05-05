@@ -1,4 +1,25 @@
-.article {
+article {
+	background-color: #e9c46a;
+	border-radius: 3px;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	margin: 30px;
 	width: 385px;
-	height: 339px;
+}
+
+article img {
+	border-radius: 3px;
+	width: inherit;
+}
+
+
+
+article a {
+	background-color: #2a9d8f;
+	border-radius: 3px;
+	color: #ffffff;
+	height: auto;
+	position: absolute;
+	bottom: 0%;
 }

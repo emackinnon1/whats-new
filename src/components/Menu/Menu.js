@@ -12,11 +12,11 @@ const Menu = (props) => {
 	});
 
 	return (
-		<section>
-			<h1>
+		<section className="menu">
+			<h1 className="title">
 				FAKE <span>NEWS</span>
 			</h1>
-			<ul className="menu">{topicList}</ul>
+			<ul className="categories">{topicList}</ul>
 		</section>
 	);
 };

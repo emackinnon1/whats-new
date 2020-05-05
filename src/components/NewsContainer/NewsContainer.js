@@ -1,12 +1,17 @@
 import React from 'react';
 import './NewsContainer.css'
-// import NewsArticle from '../NewsArticle/NewsArticle';
+import NewsArticle from '../NewsArticle/NewsArticle';
 
-const NewsContainer = (props) => {
-	// const articles = props.
+const NewsContainer = ({articles}) => {
+	// console.log(articles)
+	const articlesToDisplay = articles.map(article => {
+		return (
+			<NewsArticle articleInfo={article} />
+		);
+	})
 	return (
-		<section>
-			<h1>Hi</h1>
+		<section className="news-container">
+			{articlesToDisplay}
 		</section>
 	);
 }

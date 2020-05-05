@@ -11,7 +11,7 @@ import NewsContainer from '../NewsContainer/NewsContainer';
 class App extends Component {
 	state = {
 			allArticles: {local, technology, entertainment, science, health},
-			selected: local,
+			selected: 'local'
     }
 	
 	
@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <div className="app">
         <Menu topics={this.state.allArticles} selectTopic={this.selectTopic}/>
-				<NewsContainer article={this.state.allArticles[this.state.topic]}/>
+				<NewsContainer articles={this.state.allArticles[this.state.selected]}/>
       </div>
     );
   }
