@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import local from '../../data/local';
+import entertainment from '../../data/entertainment';
+import technology from '../../data/technology';
+import science from '../../data/science';
+import health from '../../data/health';
 import './App.css';
+import Menu from '../Menu/Menu';
+import NewsContainer from '../NewsContainer/NewsContainer';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      local
+	state = {
+			allArticles: {local, technology, entertainment, science, health},
+			selected: 'local'
     }
-  }
+	
+	
+	selectTopic(topic) {
+		this.setState({selected: topic})
+	}
+
 
   render () {
     return (
       <div className="app">
-        YOUR CODE GOES HERE!
+        <Menu topics={this.state.allArticles} selectTopic={this.selectTopic}/>
+				<NewsContainer articles={this.state.allArticles[this.state.selected]}/>
       </div>
     );
   }
