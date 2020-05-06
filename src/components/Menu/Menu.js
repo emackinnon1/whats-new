@@ -4,8 +4,14 @@ import "./Menu.css";
 const Menu = (props) => {
 	const topicArray = Object.keys(props.topics);
 	const topicList = topicArray.map((topic) => {
+		console.log(topic)
 		return (
-			<li key={topic} onClick={props.selectTopic}>
+			<li 
+				id={topic} 
+				key={topic} 
+				onClick={props.selectTopic}
+				className={topic === props.selected ? 'selected' : 'unselected'}
+			>
 				{topic.charAt(0).toUpperCase() + topic.slice(1)}
 			</li>
 		);

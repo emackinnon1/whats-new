@@ -3,10 +3,9 @@ import './NewsContainer.css'
 import NewsArticle from '../NewsArticle/NewsArticle';
 
 const NewsContainer = ({articles}) => {
-	// console.log(articles)
 	const articlesToDisplay = articles.map(article => {
 		return (
-			<NewsArticle articleInfo={article} />
+			<NewsArticle key={article.id.toString()} articleInfo={article} />
 		);
 	})
 	return (

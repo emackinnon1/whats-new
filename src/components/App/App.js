@@ -14,16 +14,17 @@ class App extends Component {
 			selected: 'local'
     }
 	
-	
-	selectTopic(topic) {
-		this.setState({selected: topic})
+	selectTopic = (e) => {
+		this.setState({
+			selected: e.target.id
+		});
 	}
 
 
   render () {
     return (
       <div className="app">
-        <Menu topics={this.state.allArticles} selectTopic={this.selectTopic}/>
+        <Menu topics={this.state.allArticles} selected={this.state.selected} selectTopic={this.selectTopic}/>
 				<NewsContainer articles={this.state.allArticles[this.state.selected]}/>
       </div>
     );
