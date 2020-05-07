@@ -18,15 +18,11 @@ class App extends Component {
 
 	selectTopic = (e) => {
 		this.setState({
-			selected: e.target.id
+			selected: e.target.id,
 		});
 	};
 
 	searchArticles = (searchInput) => {
-		// if (searchInput === '') {
-		// 	this.clearSearch();
-		// }
-
 		const currentArticles = this.state.allArticles[this.state.selected];
 		const searchResults = currentArticles.filter((article) =>
 			article.headline.match(new RegExp(searchInput, "i"))
@@ -35,16 +31,19 @@ class App extends Component {
 		this.setState({
 			articlesToDisplay: searchResults,
 		});
+
+		if (searchInput === "") {
+			this.clearSearch();
+		}
 	};
 
 	clearSearch = () => {
 		this.setState({
-			articlesToDisplay: null
+			articlesToDisplay: null,
 		});
 	};
 
 	render() {
-		console.log(this.state.articlesToDisplay)
 		return (
 			<div className="app">
 				<Menu
