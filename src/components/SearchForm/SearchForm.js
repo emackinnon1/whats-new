@@ -8,9 +8,9 @@ class SearchForm extends Component {
 
 	handleChange = (e) => {
 		this.setState({searchTerm: e.target.value});
-		this.props.clearSearch(e);
+		// console.log(this.state.searchTerm)
 	}
-
+	
 	render() {
 		return (
 			<div id="searchbar">
@@ -18,7 +18,11 @@ class SearchForm extends Component {
 					type="search" id="search" 
 					placeholder="Search article headlines" 
 					value={this.state.title}
-					onChange={this.handleChange}
+					onChange={(e) => {
+						this.handleChange(e);
+						// this.props.searchArticles(this.state.searchTerm)
+						this.props.clearSearch();
+					}}
 				>
 				</input>
 				<button 
