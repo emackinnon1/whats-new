@@ -1,15 +1,20 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./NewsArticle.css";
 
-const NewsArticle = ({ articleInfo }) => {
+const NewsArticle = ({ img, headline, description, url }) => {
 	return (
 		<article>
-				<img src={articleInfo.img} alt="Article image"/>
-				<h4>{articleInfo.headline}</h4>
-				<p>{articleInfo.description}</p>
-				<a href={articleInfo.url}>Link to Article</a>
+				<img src={img} alt="Article image"/>
+				<h4>{headline}</h4>
+				<p>{description}</p>
+				<a href={url}>Link to Article</a>
 		</article>
 	);
+};
+
+NewsArticle.propTypes = {
+	articleInfo: PropTypes.object 
 };
 
 export default NewsArticle;

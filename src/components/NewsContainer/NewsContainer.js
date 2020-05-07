@@ -1,11 +1,12 @@
 import React from 'react';
-import './NewsContainer.css'
+import PropTypes from 'prop-types';
 import NewsArticle from '../NewsArticle/NewsArticle';
+import './NewsContainer.css'
 
 const NewsContainer = ({articles}) => {
 	const articlesToDisplay = articles.map(article => {
 		return (
-			<NewsArticle key={article.id.toString()} articleInfo={article} />
+			<NewsArticle key={article.id.toString()} {...article} />
 		);
 	})
 	return (
@@ -14,5 +15,9 @@ const NewsContainer = ({articles}) => {
 		</section>
 	);
 }
+
+NewsContainer.propTypes = {
+	article: PropTypes.array
+};
 
 export default NewsContainer;
