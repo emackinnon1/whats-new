@@ -6,11 +6,11 @@ class SearchForm extends Component {
 		searchTerm: ''
 	};
 
-	handleChange = (e) => {
-		this.setState({searchTerm: e.target.value}, this.search);
+	search = (e) => {
+		this.setState({searchTerm: e.target.value}, this.searchHelper);
 	}
 
-	search = () => {
+	searchHelper = () => {
 		this.props.searchArticles(this.state.searchTerm);
 	}
 	
@@ -22,7 +22,7 @@ class SearchForm extends Component {
 					placeholder="Search article headlines" 
 					value={this.state.title}
 					onChange={(e) => {
-						this.handleChange(e);
+						this.search(e);
 					}}
 				>
 				</input>
