@@ -5,7 +5,7 @@ import "./NewsArticle.css";
 const NewsArticle = ({ img, headline, description, url }) => {
 	return (
 		<article>
-				<img src={img} alt="Article image"/>
+				<img src={img} alt="Article image" alt={headline}/>
 				<h4>{headline}</h4>
 				<p>{description}</p>
 				<a href={url}>Link to Article</a>
