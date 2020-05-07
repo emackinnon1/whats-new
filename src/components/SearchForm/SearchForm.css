@@ -10,11 +10,3 @@
 #searchbar input {
 	width: 300px;
 }
-
-#searchbar button {
-	background: #E9C46A;
-	border-radius: 3px;
-	height: 21px;
-	margin-left: 15px;
-	width: 60px;
-}
