@@ -17,6 +17,7 @@ describe("NewsArticle", () => {
 		};
 		const { getByText } = render(<NewsArticle {...articleInfo} />);
 
+
 		expect(
 			getByText("The Who postpones Denver Concert at the Pepsi Center")
 		).toBeInTheDocument();
