@@ -3,29 +3,29 @@ import "./SearchForm.css";
 
 class SearchForm extends Component {
 	state = {
-		searchTerm: ''
+		searchTerm: ""
 	};
 
-	handleChange = (e) => {
-		this.setState({searchTerm: e.target.value}, this.search);
-	}
+	search = e => {
+		this.setState({ searchTerm: e.target.value }, this.searchHelper);
+	};
 
-	search = () => {
+	searchHelper = () => {
 		this.props.searchArticles(this.state.searchTerm);
-	}
-	
+	};
+
 	render() {
 		return (
 			<div id="searchbar">
-				<input 
-					type="search" id="search" 
-					placeholder="Search article headlines" 
+				<input
+					type="search"
+					id="search"
+					placeholder="Search article headlines"
 					value={this.state.title}
-					onChange={(e) => {
-						this.handleChange(e);
+					onChange={e => {
+						this.search(e);
 					}}
-				>
-				</input>
+				></input>
 			</div>
 		);
 	}
